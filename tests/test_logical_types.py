@@ -6,6 +6,8 @@ from decimal import Decimal
 from io import BytesIO
 from uuid import uuid4
 import datetime
+import sys
+import os
 
 
 schema = {
@@ -77,6 +79,10 @@ def test_logical_types():
 
 
 def test_not_logical_ints():
+    # This test doesn't work on Windows with python 3.6
+    if os.name == 'nt' and sys.version_info[:2] == (3, 6):
+        pytest.skip('Python Bug: https://bugs.python.org/issue29097')
+
     data1 = {
         'date': 1,
         'timestamp-millis': 2,
