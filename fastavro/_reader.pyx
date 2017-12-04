@@ -619,6 +619,16 @@ def _iter_avro(ReaderBase fo, header, codec, writer_schema, reader_schema):
         skip_sync(fo, sync_marker)
 
 
+class schemad_reader:
+    """Parses individual datums"""
+
+    def __init__(self, schema):
+        self.schema = schema
+
+    def parse(self, buf):
+        return read_data(buf, self.schema, self.schema)
+
+
 class iter_avro:
     """Iterator over avro file."""
     def __init__(self, fo, reader_schema=None):

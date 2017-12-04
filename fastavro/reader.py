@@ -8,6 +8,7 @@ from ._reader_common import SchemaResolutionError
 
 acquaint_schema = _reader.acquaint_schema
 reader = iter_avro = _reader.iter_avro
+schemad_reader = _reader.schemad_reader
 schemaless_reader = _reader.schemaless_reader
 read_data = _reader.read_data
 is_avro = _reader.is_avro
@@ -16,7 +17,8 @@ READERS = _reader.READERS
 LOGICAL_READERS = _reader.LOGICAL_READERS
 
 __all__ = [
-    'acquaint_schema', 'reader', 'schemaless_reader', 'read_data', 'is_avro',
+    'acquaint_schema', 'reader', 'schemad_reader', 'schemaless_reader',
+    'read_data', 'is_avro',
     'HEADER_SCHEMA', 'SYNC_SIZE', 'MAGIC', 'SchemaResolutionError',
     'LOGICAL_READERS', 'READERS',
 ]
