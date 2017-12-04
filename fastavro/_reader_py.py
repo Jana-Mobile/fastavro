@@ -70,39 +70,8 @@ def match_types(writer_type, reader_type):
 
 
 def match_schemas(w_schema, r_schema):
-    error_msg = 'Schema mismatch: %s is not %s' % (w_schema, r_schema)
-    if isinstance(w_schema, list):
-        # If the writer is a union, checks will happen in read_union after the
-        # correct schema is known
-        return True
-    elif isinstance(r_schema, list):
-        # If the reader is a union, ensure one of the new schemas is the same
-        # as the writer
-        for schema in r_schema:
-            if match_types(w_schema, schema):
-                return True
-        else:
-            raise SchemaResolutionError(error_msg)
-    else:
-        # Check for dicts as primitive types are just strings
-        if isinstance(w_schema, dict):
-            w_type = w_schema['type']
-        else:
-            w_type = w_schema
-        if isinstance(r_schema, dict):
-            r_type = r_schema['type']
-        else:
-            r_type = r_schema
-
-        if w_type == r_type == 'map':
-            if match_types(w_schema['values'], r_schema['values']):
-                return True
-        elif w_type == r_type == 'array':
-            if match_types(w_schema['items'], r_schema['items']):
-                return True
-        elif match_types(w_type, r_type):
-            return True
-        raise SchemaResolutionError(error_msg)
+    # Yolo
+    return True
 
 
 def read_null(fo, writer_schema=None, reader_schema=None):
