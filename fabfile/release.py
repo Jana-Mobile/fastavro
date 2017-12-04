@@ -18,19 +18,19 @@ def increment_version():
     current_version = _extract_version_code()
     new_version = _increment_version(current_version)
 
-    local(r"sed -i.orig 's/__version_info__ = \(.*\)/__version_info__ = \({}\)/' fastavro/__init__.py".
+    local(r"sed -i.orig 's/__version_info__ = \(.*\)/__version_info__ = \({}\)/' fastavro_jana/__init__.py".
           format(', '.join([
               str(v) for v in new_version
           ])))
-    local('git add fastavro/__init__.py')
+    local('git add fastavro_jana/__init__.py')
     local('git commit -m "Update version to {}"'.format(new_version))
 
     local('git push origin master --tags')
-    local('rm -f fastavro/__init__.py.orig')
+    local('rm -f fastavro_jana/__init__.py.orig')
 
 
 def _extract_version_code():
-    with open('fastavro/__init__.py', 'r') as f:
+    with open('fastavro_jana/__init__.py', 'r') as f:
         for line in f:
             matches = re.search(
                 '__version_info__ = \(\d*, \d*, \d*\)',
