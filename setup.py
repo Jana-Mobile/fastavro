@@ -55,20 +55,20 @@ if not hasattr(sys, 'pypy_version_info'):
     setup_requires += cpython_requires
 
 setup(
-    name='fastavro',
+    name='fastavro_jana',
     version=version(),
     description='Fast read/write of AVRO files',
     long_description=open('README.md').read(),
     author='Miki Tebeka',
     author_email='miki.tebeka@gmail.com',
     license='MIT',
-    url='https://github.com/tebeka/fastavro',
-    packages=['fastavro'],
+    url='https://github.com/Jana-Mobile/fastavro',
+    packages=['fastavro_jana'],
     ext_modules=ext_modules,
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'fastavro = fastavro.__main__:main',
+            'fastavro_jana = fastavro.__main__:main',
         ]
     },
     classifiers=[
