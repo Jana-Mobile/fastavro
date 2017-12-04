@@ -6,10 +6,10 @@ of features in order to get speed.
 The only onterface function is iter_avro, example usage::
 
     # Reading
-    import fastavro as avro
+    import fastavro_jana as avro
 
     with open('some-file.avro', 'rb') as fo:
-        reader = fastavro.reader(fo)
+        reader = fastavro_jana.reader(fo)
         schema = reader.schema
 
         for record in reader:
@@ -17,7 +17,7 @@ The only onterface function is iter_avro, example usage::
 
 
     # Writing
-    from fastavro import writer
+    from fastavro_jana import writer
 
     schema = {
         'doc': 'A weather reading.',

@@ -20,15 +20,15 @@ from setuptools import Extension
 ext_modules = []
 if not hasattr(sys, 'pypy_version_info'):
     ext_modules += [
-        Extension('fastavro._reader', ["fastavro/_reader.pyx"]),
-        Extension('fastavro._schema', ["fastavro/_schema.pyx"]),
-        Extension('fastavro._six', ["fastavro/_six.pyx"]),
-        Extension('fastavro._writer', ["fastavro/_writer.pyx"]),
+        Extension('fastavro_jana._reader', ["fastavro_jana/_reader.pyx"]),
+        Extension('fastavro_jana._schema', ["fastavro_jana/_schema.pyx"]),
+        Extension('fastavro_jana._six', ["fastavro_jana/_six.pyx"]),
+        Extension('fastavro_jana._writer', ["fastavro_jana/_writer.pyx"]),
     ]
 
 
 def version():
-    pyfile = 'fastavro/__init__.py'
+    pyfile = 'fastavro_jana/__init__.py'
     with open(pyfile) as fp:
         data = fp.read()
 
@@ -62,13 +62,13 @@ setup(
     author='Miki Tebeka',
     author_email='miki.tebeka@gmail.com',
     license='MIT',
-    url='https://github.com/Jana-Mobile/fastavro',
+    url='https://github.com/Jana-Mobile/fastavro_jana',
     packages=['fastavro_jana'],
     ext_modules=ext_modules,
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'fastavro_jana = fastavro.__main__:main',
+            'fastavro_jana = fastavro_jana.__main__:main',
         ]
     },
     classifiers=[

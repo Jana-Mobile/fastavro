@@ -4,9 +4,9 @@ README.html
 build
 dist
 docs/_build/
-fastavro.egg-info
-fastavro/*.so
-fastavro/_*.c
+fastavro_jana.egg-info
+fastavro_jana/*.so
+fastavro_jana/_*.c
 profile.out
 tests/benchmark.avro
 venv

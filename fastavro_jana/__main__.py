@@ -1,5 +1,5 @@
-import fastavro as avro
-from fastavro.six import json_dump
+import fastavro_jana as avro
+from fastavro_jana.six import json_dump
 from sys import stdout
 
 encoding = stdout.encoding or "UTF-8"
@@ -19,7 +19,7 @@ def main(argv=None):
     parser.add_argument('--codecs', help='print supported codecs',
                         action='store_true', default=False)
     parser.add_argument('--version', action='version',
-                        version='fastavro %s' % avro.__version__)
+                        version='fastavro_jana %s' % avro.__version__)
     parser.add_argument('-p', '--pretty', help='pretty print json',
                         action='store_true', default=False)
     args = parser.parse_args(argv[1:])
