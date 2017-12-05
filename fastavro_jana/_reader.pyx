@@ -1,4 +1,5 @@
 # cython: auto_cpdef=True
+# cython: profile=True
 
 """Python code for reading AVRO files"""
 
